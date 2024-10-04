@@ -1,0 +1,31 @@
+<!-- index.ejs
+Xuan Tri Nguyen 
+3013888576
+Duedate: Sep 26, 2024  -->
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <div class="introContent" >
+      <div id="intro" class="intro">
+      <span class="hello">Hi,</span><br/>
+      <span class="introText">My name is <span class="introName">Tri</span> 
+      </span>
+      <p class="introPara">I'm an independent <span class="softwareDev">Software Developer</span> from Toronto, Ontario.</p>
+      <a href="mailto:nguyenxuantrilop62@gmail.com"><button class="hire-me-button">Hire Me</button>  </a>
+      </div>          
+ </div>
+    </main>
+    <script>
+      // Display retrieve data through log
+      const contactData = JSON.parse(localStorage.getItem('contactData'));
+      if (contactData) {
+          console.log('Submitted Data:', contactData);
+          localStorage.removeItem('contactData'); 
+      }
+  </script>
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- contact.ejs
+Xuan Tri Nguyen 
+3013888576
+Duedate: Sep 26, 2024  -->
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <div class="introContent" >
+        <h2 class="center">Contact Me</h2>
+        <div id="intro" class="intro">
+        <form id="contact-form" class="align">
+         <label for="name">Name:</label>
+         <input type="text" id="name" name="name" required></input>
+         <label for="email">Email:</label> 
+   
+         <input type="email" id="email" name="email" required></input>
+         <label for="message">Message:</label>
+         <textarea id="message" name="message" required></textarea> 
+           <div class="centerbtn">
+           <button  type="submit" >Contact Me</button>
+           </div>      
+       </form>
+         </div>
+         </div>
+    <%- include('partials/footer') %>
+    <script>
+        //function to capture informations from the form
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent actual form submission
+
+            // Retrieve values from the form fields
+            const firstName = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Store the data in local storage
+            localStorage.setItem('contactData', JSON.stringify({
+                name,
+                email,
+                message
+            }));
+            window.location.href = '/'; // Redirect to the home page
+        });     
+    </script>
+</body>
+</html>
